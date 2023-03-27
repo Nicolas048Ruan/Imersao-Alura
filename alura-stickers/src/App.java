@@ -35,5 +35,13 @@ public class App {
         // System.out.println(listaFilmes.get(0));
 
         // Exibir e manipular os dados
+
+        for (Map<String, String> filme : listaFilmes) {
+            System.out.println(filme.get("title"));
+            System.out.println(filme.get("image"));
+            System.out.println(filme.get("imDbRating"));
+            System.out.println();
+        }
+
     }
 }
