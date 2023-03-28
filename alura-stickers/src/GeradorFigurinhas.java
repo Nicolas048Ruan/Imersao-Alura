@@ -1,6 +1,8 @@
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.FontMetrics;
 import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 // import java.io.FileInputStream;
@@ -11,7 +13,7 @@ import javax.imageio.ImageIO;
 
 public class GeradorFigurinhas {
     
-    public void criar(InputStream inputStream, String nomeArquivo) throws Exception {
+    public void criar(InputStream inputStream, String nomeArquivo, Double rating) throws Exception {
 
         // Leitura da imagem
 
@@ -42,14 +44,30 @@ public class GeradorFigurinhas {
 
         // Configurar a fonte
 
-        var fonte = new Font(Font.SANS_SERIF, Font.BOLD, 64);
+        var fonte = new Font(Font.SANS_SERIF, Font.BOLD, 86);
 
         graphics.setColor(Color.ORANGE);
         graphics.setFont(fonte);
 
         // Escrever uma frase na nova imagem
 
-        graphics.drawString("TOPZERA", 100, novaAltura - 100);
+        String texto = "";
+
+        if (rating > 9) {
+            texto = "TOPZERA";
+        } else if (rating == 9) {
+            texto = "MUITO BOM";
+        } else {
+            texto = "BOM";
+        }
+
+        FontMetrics fontMetrics = graphics.getFontMetrics();
+        Rectangle2D retangulo = fontMetrics.getStringBounds(texto, graphics);
+        int larguraTexto = (int) retangulo.getWidth();
+
+        int posicaoX = (largura - larguraTexto) / 2;
+
+        graphics.drawString(texto, posicaoX, novaAltura - 100);
 
         // Escrever a nova imagem em um arquivo
 

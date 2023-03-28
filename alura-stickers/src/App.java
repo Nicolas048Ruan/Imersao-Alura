@@ -53,16 +53,16 @@ public class App {
 
             String urlImagem = filme.get("image");
             String titulo = filme.get("title");
+            var avaliacao = Double.parseDouble(filme.get("imDbRating"));
+
 
             InputStream inputStream = new URL(urlImagem).openStream();
 
             String nomeArquivo = "output/" + titulo + ".png";
 
-            geradora.criar(inputStream, nomeArquivo);
+            geradora.criar(inputStream, nomeArquivo, avaliacao);
 
             System.out.println("-----------------------------");
-
-            var avaliacao = Double.parseDouble(filme.get("imDbRating"));
 
             System.out.println(BOLD + AZUL + "Classificação: " + avaliacao + RESET);
 
