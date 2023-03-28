@@ -1,6 +1,6 @@
 ## Minha primeira aula da Imersão Java Alura
 
-## Objetivo:
+## Objetivo Aula 1:
 
 - Consumir uma API de filmes com Java
 
@@ -16,3 +16,25 @@ melhor layout com cores e emojis.
 ## Print do projeto da Aula 1
 
 ![Print do Projeto](img/print.png)
+
+
+
+## Objetivo Aula2:
+
+- Gerar figurinhas para o WhatsApp
+
+1. Criar diretório de saída das imagens, se ainda não existir.
+
+2. Centralizar o texto na figurinha.
+
+3. Colocar outra fonte como a Comic Sans ou a Impact, a fonte usada em memes.
+
+4. Colocar contorno (outline) no texto da imagem.
+
+![Print do Output](img/printA2.png)
+
+![Print do Projeto](img/printTopzera.png)
+
+![Print do Projeto](img/printMuitoBom.png)
+
+![Print do Projeto](img/printBom.png)
