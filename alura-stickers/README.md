@@ -31,6 +31,8 @@ melhor layout com cores e emojis.
 
 4. Colocar contorno (outline) no texto da imagem.
 
+## Prints dos projetos da Aula 2
+
 ![Print do Output](img/printA2.png)
 
 ![Print do Projeto](img/printTopzera.png)
