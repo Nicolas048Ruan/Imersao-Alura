@@ -7,6 +7,11 @@ import java.util.List;
 import java.util.Map;
 
 public class App {
+
+    public static final String RESET = "\u001B[0m";
+    public static final String AZUL = "\u001b[44m";
+    public static final String BOLD = "\u001b[1m";
+
     public static void main(String[] args) throws Exception {
 
         // fazer uma conexão HTTP e buscar os top 250 filmes
@@ -37,10 +42,22 @@ public class App {
         // Exibir e manipular os dados
 
         for (Map<String, String> filme : listaFilmes) {
-            System.out.println(filme.get("title"));
-            System.out.println(filme.get("image"));
-            System.out.println(filme.get("imDbRating"));
+            System.out.println("-----------------------------");
+
+            var avaliacao = Double.parseDouble(filme.get("imDbRating"));
+
+            System.out.println(BOLD + AZUL + "Classificação: " + avaliacao + RESET);
+
+            for (int star = 1; star <= avaliacao; star++) {
+                System.out.print("⭐");
+            }
             System.out.println();
+
+            System.out.println(BOLD + "Titulo: " + RESET + filme.get("title"));
+
+            System.out.println(BOLD + "Imagem: " + RESET + filme.get("image"));
+
+            System.out.println("-----------------------------");
         }
 
     }
