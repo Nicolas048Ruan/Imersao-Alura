@@ -3,7 +3,7 @@
     ## Objetivo:
 
         - Consumir uma API de filmes com Java
-
+        
             1. Fazer a conexão com a API.
 
             2. Fazer a extração dos dados com uma classe própria disponibilizada em aula.
@@ -15,4 +15,4 @@
 
 ## Print do projeto da Aula 1
 
-    ![Print do Projeto](C:\Users\nicol\OneDrive\Documentos\Imersao-Java-Alura\Imersao-Alura\alura-stickers\img/print.png)
+    ![Print do Projeto](https://1drv.ms/i/s!Ao1HzgdTkZRfgYBsdcYYHk99vwcS4w?e=mNpktT)
