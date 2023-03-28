@@ -1,7 +1,12 @@
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
+import java.awt.Shape;
+import java.awt.font.FontRenderContext;
+import java.awt.font.TextLayout;
+import java.awt.geom.AffineTransform;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -44,7 +49,7 @@ public class GeradorFigurinhas {
 
         // Configurar a fonte
 
-        var fonte = new Font(Font.SANS_SERIF, Font.BOLD, 86);
+        var fonte = new Font("Comic Sans", Font.BOLD, 86);
 
         graphics.setColor(Color.ORANGE);
         graphics.setFont(fonte);
@@ -67,7 +72,29 @@ public class GeradorFigurinhas {
 
         int posicaoX = (largura - larguraTexto) / 2;
 
+        int posicaoY = novaAltura - 100;
+
         graphics.drawString(texto, posicaoX, novaAltura - 100);
+
+        FontRenderContext fontRenderContext = graphics.getFontRenderContext();
+        
+        TextLayout textLayout = new TextLayout(texto, fonte, fontRenderContext);
+
+        Shape outline = textLayout.getOutline(null);
+
+        AffineTransform transform = graphics.getTransform();
+        
+        transform.translate(posicaoX, posicaoY);
+
+        graphics.setTransform(transform);
+
+        var outlineStroke = new BasicStroke(largura * 0.004f);
+
+        graphics.setColor(Color.BLACK);
+
+        graphics.setStroke(outlineStroke);
+
+        graphics.setClip(outline);
 
         // Escrever a nova imagem em um arquivo
 
