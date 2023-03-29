@@ -18,8 +18,9 @@ import javax.imageio.ImageIO;
 
 public class GeradorFigurinhas {
     
-    public void criar(InputStream inputStream, String nomeArquivo, Double rating) throws Exception {
-
+    // public void criar(InputStream inputStream, String nomeArquivo, Double rating) throws Exception {
+    public void criar(InputStream inputStream, String nomeArquivo) throws Exception {
+        
         // Leitura da imagem
 
         // InputStream inputStream =
@@ -56,15 +57,15 @@ public class GeradorFigurinhas {
 
         // Escrever uma frase na nova imagem
 
-        String texto = "";
+        String texto = "TOPZERA";
 
-        if (rating > 9) {
-            texto = "TOPZERA";
-        } else if (rating == 9) {
-            texto = "MUITO BOM";
-        } else {
-            texto = "BOM";
-        }
+        // if (rating > 9) {
+        //     texto = "TOPZERA";
+        // } else if (rating == 9) {
+        //     texto = "MUITO BOM";
+        // } else {
+        //     texto = "BOM";
+        // }
 
         FontMetrics fontMetrics = graphics.getFontMetrics();
         Rectangle2D retangulo = fontMetrics.getStringBounds(texto, graphics);
@@ -99,7 +100,7 @@ public class GeradorFigurinhas {
         // Escrever a nova imagem em um arquivo
 
         // ImageIO.write(novaImagem, "png", new File("saida/figurinha.png"));
-        ImageIO.write(novaImagem, "png", new File(nomeArquivo));
+        ImageIO.write(novaImagem, "png", new File(nomeArquivo.replace(":", "-")));
 
     }
 

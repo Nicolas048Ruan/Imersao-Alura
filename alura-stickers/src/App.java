@@ -1,13 +1,7 @@
 import java.io.File;
 import java.io.InputStream;
-import java.net.URI;
 import java.net.URL;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.net.http.HttpResponse.BodyHandlers;
 import java.util.List;
-import java.util.Map;
 
 public class App {
 
@@ -19,65 +13,48 @@ public class App {
 
         // fazer uma conexão HTTP e buscar os top 250 filmes
         
-        String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
+        // String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
+        // ExtratorConteudo extrator = new ExtratorIMDB();
 
-        URI endereco = URI.create(url);
+        String url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&start_date=2022-06-12&end_date=2022-06-14";
+        ExtratorConteudo extrator = new ExtratorNasa();
 
-        var client = HttpClient.newHttpClient();
-        
-        var request = HttpRequest.newBuilder(endereco).GET().build();
-
-        HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
-
-        String body = response.body();
-
-        // System.out.println(body);
-
-        // Extrair só os dados q nos interessam (título, postel, classificação)
-
-        var parser = new JsonParser();
-
-        List<Map<String, String>> listaFilmes = parser.parse(body);
-
-        // System.out.println(listaFilmes.size());
-        // System.out.println(listaFilmes.get(0));
+        var http = new ClienteHttp();
+        String json = http.buscaDados(url);
 
         // Exibir e manipular os dados
 
-        var geradora = new GeradorFigurinhas(); 
+        List<Conteudo> conteudos = extrator.extraiConteudos(json);
+
+        var gerador = new GeradorFigurinhas(); 
 
         var directory = new File("output/");
         directory.mkdir();
 
-        for (Map<String, String> filme : listaFilmes) {
+        for (Conteudo conteudo : conteudos) {
 
-            String urlImagem = filme.get("image");
-            String titulo = filme.get("title");
-            var avaliacao = Double.parseDouble(filme.get("imDbRating"));
+            InputStream inputStream = new URL(conteudo.getUrlImagem()).openStream();
 
+            String nomeArquivo = "output/" + conteudo.getTitulo() + ".png";
 
-            InputStream inputStream = new URL(urlImagem).openStream();
-
-            String nomeArquivo = "output/" + titulo + ".png";
-
-            geradora.criar(inputStream, nomeArquivo, avaliacao);
+            // geradora.criar(inputStream, nomeArquivo, avaliacao);
+            gerador.criar(inputStream, nomeArquivo);
 
             System.out.println("-----------------------------");
 
-            System.out.println(BOLD + AZUL + "Classificação: " + avaliacao + RESET);
+            // System.out.println(BOLD + AZUL + "Classificação: " + avaliacao + RESET);
 
-            for (int star = 1; star <= avaliacao; star++) {
-                System.out.print("⭐");
-            }
-            System.out.println();
+            // for (int star = 1; star <= avaliacao; star++) {
+            //     System.out.print("⭐");
+            // }
+            // System.out.println();
 
-            System.out.println(BOLD + "Titulo: " + RESET + titulo);
+            System.out.println(BOLD + AZUL + "Titulo: " + RESET + conteudo.getTitulo());
 
-            System.out.println(BOLD + "Imagem: " + RESET + urlImagem);
+            System.out.println(BOLD + AZUL + "Imagem: " + RESET + conteudo.getUrlImagem());
 
             System.out.println("-----------------------------");
         }
 
     }
 }
- 
