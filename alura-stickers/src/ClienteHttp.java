@@ -25,7 +25,7 @@ public class ClienteHttp {
 
         } catch (IOException | InterruptedException ex) {
         
-            throw new RuntimeException(ex);
+            throw new ClienteHttpException("Erro ao consultar a URL");
 
         }
     }
