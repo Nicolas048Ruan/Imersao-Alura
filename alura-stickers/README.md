@@ -61,8 +61,8 @@ melhor layout com cores e emojis.
 
 ## Prints dos projetos da Aula 3
 
-![Img da Nasa](output/Find%20the%20Man%20in%20the%20Moon.png)
+![Img da Nasa](img/luaA3.png)
 
-![Img da Nasa](output/M51-%20The%20Whirlpool%20Galaxy%20from%20Hubble.png)
+![Img da Nasa](img/galaxyA3.png)
 
-![Img da Nasa](output/Satellites%20Behind%20Pinnacles.png)
+![Img da Nasa](img/pedraA3.png)

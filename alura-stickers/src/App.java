@@ -19,6 +19,8 @@ public class App {
 
         ExtratorConteudo extrator = api.getExtrator();
 
+        
+
         var http = new ClienteHttp();
         String json = http.buscaDados(url);
 
