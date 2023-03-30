@@ -12,22 +12,11 @@ public class ExtratorNasa implements ExtratorConteudo {
 
         List<Map<String, String>> listaAtributos = parser.parse(json);
 
-        List<Conteudo> conteudos = new ArrayList<>();
+        return listaAtributos.stream()
+            .map(atributos -> 
+                new Conteudo(atributos.get("title"), atributos.get("url"))
+            ).toList();
 
-        // Popular a lista de conteudos
-
-        for (Map<String, String> atributos : listaAtributos) {
-            
-            String titulo = atributos.get("title");
-
-            String urlImagem = atributos.get("url");
-
-            var conteudo = new Conteudo(titulo, urlImagem);
-
-            conteudos.add(conteudo);
-        }
-
-        return conteudos;
     }
 
 }

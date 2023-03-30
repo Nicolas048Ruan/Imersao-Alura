@@ -12,24 +12,11 @@ public class ExtratorIMDB implements ExtratorConteudo {
 
         List<Map<String, String>> listaAtributos = parser.parse(json);
 
-        List<Conteudo> conteudos = new ArrayList<>();
-
-        // Popular a lista de conteudos
-
-        for (Map<String, String> atributos : listaAtributos) {
-            
-            String titulo = atributos.get("title");
-
-            String urlImagem = atributos.get("image")
-                .replaceAll("(@+)(.*).jpg", "$1.jpg");
-
-            var conteudo = new Conteudo(titulo, urlImagem);
-
-            conteudos.add(conteudo);
-        }
-
-        return conteudos;
-
+        return listaAtributos.stream()
+            .map(atributos -> 
+                new Conteudo(atributos.get("title"), atributos.get("image")
+                    .replaceAll("(@+)(.*).jpg", "$1.jpg"))
+            ).toList();
 
     }
 }
