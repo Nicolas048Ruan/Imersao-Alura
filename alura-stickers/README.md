@@ -1,8 +1,10 @@
-## Minha primeira aula da Imersão Java Alura
+# Minhas aulas da Imersão Java Alura
 
 ## Objetivo Aula 1:
 
-- Consumir uma API de filmes com Java
+### Consumir uma API de filmes com Java
+
+- Desafios
 
 1. Fazer a conexão com a API.
 
@@ -18,10 +20,11 @@ melhor layout com cores e emojis.
 ![Print do Projeto](img/print.png)
 
 
+## Objetivo Aula 2:
 
-## Objetivo Aula2:
+### Gerar figurinhas para o WhatsApp
 
-- Gerar figurinhas para o WhatsApp
+- Desafios
 
 1. Criar diretório de saída das imagens, se ainda não existir.
 
@@ -40,3 +43,26 @@ melhor layout com cores e emojis.
 ![Print do Projeto](img/printMuitoBom.png)
 
 ![Print do Projeto](img/printBom.png)
+
+
+## Objetivo Aula 3:
+
+### Ligando as pontas, refatoração e orientacão a objetos
+
+- Desafios
+
+1. Transformar a classe que representa os conteúdos em um Record.
+
+2. Criar as suas próprias exceções e usá-las na classe que implementa o cliente HTTP.
+
+3. Usar Streams e Lambdas, para mapear uma lista em uma outra.
+
+4. Criar uma Enum que une, como configurações, a URL da API e o extrator utilizado.
+
+## Prints dos projetos da Aula 3
+
+![Img da Nasa](output/Find%20the%20Man%20in%20the%20Moon.png)
+
+![Img da Nasa](output/M51-%20The%20Whirlpool%20Galaxy%20from%20Hubble.png)
+
+![Img da Nasa](output/Satellites%20Behind%20Pinnacles.png)
