@@ -13,13 +13,13 @@ public class App {
 
         // fazer uma conexão HTTP e buscar os top 250 filmes
         
-        API api = API.NASA;
+        // API api = API.NASA;
+        // String url = api.getUrl();
+        // ExtratorConteudo extrator = api.getExtrator();
 
-        String url = api.getUrl();
+        String url = "http://localhost:8080/linguagens";
 
-        ExtratorConteudo extrator = api.getExtrator();
-
-        
+        ExtratorConteudo extrator = new ExtratorIMDB();
 
         var http = new ClienteHttp();
         String json = http.buscaDados(url);
