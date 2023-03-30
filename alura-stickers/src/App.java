@@ -33,9 +33,9 @@ public class App {
 
         for (Conteudo conteudo : conteudos) {
 
-            InputStream inputStream = new URL(conteudo.getUrlImagem()).openStream();
+            InputStream inputStream = new URL(conteudo.urlImagem()).openStream();
 
-            String nomeArquivo = "output/" + conteudo.getTitulo() + ".png";
+            String nomeArquivo = "output/" + conteudo.titulo() + ".png";
 
             // geradora.criar(inputStream, nomeArquivo, avaliacao);
             gerador.criar(inputStream, nomeArquivo);
@@ -49,9 +49,9 @@ public class App {
             // }
             // System.out.println();
 
-            System.out.println(BOLD + AZUL + "Titulo: " + RESET + conteudo.getTitulo());
+            System.out.println(BOLD + AZUL + "Titulo: " + RESET + conteudo.titulo());
 
-            System.out.println(BOLD + AZUL + "Imagem: " + RESET + conteudo.getUrlImagem());
+            System.out.println(BOLD + AZUL + "Imagem: " + RESET + conteudo.urlImagem());
 
             System.out.println("-----------------------------");
         }
