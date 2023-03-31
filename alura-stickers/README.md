@@ -80,7 +80,7 @@ melhor layout com cores e emojis.
 
 3. Retornar o status 201 quando um recurso (linguagem, no nosso caso) for cadastrado através do POST.
 
-## Prints dos projetos da Aula 3
+## Prints dos projetos da Aula 4
 
 ![Img da API](img/api.png)
 
