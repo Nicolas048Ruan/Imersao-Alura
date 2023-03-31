@@ -17,7 +17,9 @@ public class App {
         // String url = api.getUrl();
         // ExtratorConteudo extrator = api.getExtrator();
 
-        String url = "http://localhost:8080/linguagens";
+        // String url = "http://localhost:8080/linguagens";
+
+        String url = "https://nico-alura-linguagens.fly.dev/linguagens";
 
         ExtratorConteudo extrator = new ExtratorIMDB();
 

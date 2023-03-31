@@ -89,3 +89,13 @@ melhor layout com cores e emojis.
 ![Img da API](img/python.png)
 
 ![Img da API](img/csharp.png)
+
+
+## Objetivo Aula 5:
+
+### Publicando nossa API no Cloud
+
+
+## Print da da Aula 5 rodando no Cloud
+
+![Img da Cloud](img/cloud.png)
