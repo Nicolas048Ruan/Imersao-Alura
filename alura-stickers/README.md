@@ -66,3 +66,26 @@ melhor layout com cores e emojis.
 ![Img da Nasa](img/galaxyA3.png)
 
 ![Img da Nasa](img/pedraA3.png)
+
+
+## Objetivo Aula 4:
+
+### Criando nossa própria API com Spring
+
+- Desafios
+
+1. Finalizar o CRUD (Create, Read, Update e Delete) para que se possa atualizar e excluir uma linguagem cadastrada.
+
+2. Devolver a listagem ordenada pelo ranking.
+
+3. Retornar o status 201 quando um recurso (linguagem, no nosso caso) for cadastrado através do POST.
+
+## Prints dos projetos da Aula 3
+
+![Img da API](img/api.png)
+
+![Img da API](img/java.png)
+
+![Img da API](img/python.png)
+
+![Img da API](img/csharp.png)

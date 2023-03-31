@@ -50,7 +50,7 @@ public class GeradorFigurinhas {
 
         // Configurar a fonte
 
-        var fonte = new Font("Comic Sans", Font.BOLD, 86);
+        var fonte = new Font("Comic Sans", Font.BOLD, 40);
 
         graphics.setColor(Color.ORANGE);
         graphics.setFont(fonte);
